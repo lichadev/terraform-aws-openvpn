@@ -6,6 +6,10 @@ variable "docker_cidr" {
     type    = string
     default = "192.168.125.1/24"
 }
+variable "dns_name" {
+    type =  string
+    default = ""
+}
 variable "instance_type" {
     type    = string
     default = "t3a.micro"
@@ -36,6 +40,10 @@ variable "tags" {
 variable "ubuntu_ami_id" {
     type    = string
     default = ""
+}
+variable "region" {
+    type    = string
+    default = "us-east-2"
 }
 variable "volume_path" {
     type    = string

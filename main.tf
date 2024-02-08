@@ -58,6 +58,8 @@ resource "aws_launch_template" "this" {
         aws_region          = data.aws_region.current.name,
         eip_address         = aws_eip.this.public_ip,
         eip_allocation_id   = aws_eip.this.id,
+        dns_name            = var.dns_name,
+        server_address      = var.dns_name != "" ? var.dns_name : aws_eip.this.public_ip
         volume_path         = var.volume_path,
         volume_device_name  = "/dev/sdf"
         volume_id           = aws_ebs_volume.this.id
@@ -101,7 +103,6 @@ resource "aws_key_pair" "this" {
 }
 
 resource "aws_eip" "this" {
-  vpc  = true
   tags = local.tags
 }
 

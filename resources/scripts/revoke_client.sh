@@ -1,4 +1,4 @@
-if [ $(whoami) == "ubuntu" ] && [ -n "$1" ] ; then
+if [ $(whoami) = "ubuntu" ] && [ -n "$1" ] ; then
 	docker compose run --rm openvpn ovpn_revokeclient $1 remove
 	echo "Client $1 has been removed."
 	rm ./keys/$1.ovpn

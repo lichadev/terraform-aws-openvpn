@@ -1,5 +1,4 @@
 #!/bin/bash
-
 main(){
   install_dependencies
   mount_volume
@@ -72,7 +71,7 @@ config_openvpn(){
                     %{ for route in routes  ~}
                     -p "route ${route}" \
                     %{ endfor ~}
-                    -e 'topology subnet' -u udp://${eip_address}
+                    -e 'topology subnet' -u udp://${server_address}
       echo "openvpn" | docker compose run -T --rm openvpn ovpn_initpki nopass
   fi
 

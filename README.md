@@ -38,6 +38,8 @@ module "openvpn" {
 | ubuntu\_ami\_id | Custom Ubuntu AMI id for the OpenVPN instance. | `string` | `""` | no |
 | volume\_path | Path to mount the data fs. | `string` | `"/openvpn/"` | no |
 | vpc\_id | VPC id where the OpenVPN will be hosted. | `string` | ` ` | yes |
+| dns\_name | DNS name that points to elastic ip  | `string` | ` ` | no |
+
 
 ## Outputs
 
